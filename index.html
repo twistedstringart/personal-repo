@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <script>
+        let currselect = 'aboutme';
+        
+        const gallery = document.getElementById('gallery');
+
+        function buttonPressed(text) {
+            let currhtml = document.getElementById(currselect);
+            currhtml.style.display = "none";
+            switch(text) {
+                case 'aboutmebutton':
+                    currselect = 'aboutme'
+                    break;
+                case 'gallerybutton':
+                    currselect = 'gallery'
+                    break;
+                case 'commissionsbutton':
+                    currselect = 'commissions'
+                    break;
+            }
+            let newhtml = document.getElementById(currselect);
+            newhtml.style.display = "block";
+        }
+
+    </script>
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Twisted String Art</title>
+</head>
+<body>
+    <div id="header">
+        <div id="imgbackground">
+            <img id="headerimg" src="1.png" alt="Italian Trulli">
+        </div>
+        <div id="navbartoplevel">
+            <div >
+                <button id="aboutmebutton" onclick="buttonPressed(this.id)" class="navbutton">About Me</button>
+            </div>
+            <div >
+                <button id="gallerybutton" onclick="buttonPressed(this.id)" class="navbutton">Gallery</button>
+            </div>
+            <div>
+                <button id="commissionsbutton" onclick="buttonPressed(this.id)" class="navbutton">Commissions</button>
+            </div>
+        </div>
+    </div>
+    <div id="aboutme">
+        <textarea>aboutme</textarea>
+
+    </div>
+    <div id="gallery" style="display: none;">
+        <textarea>hi</textarea>
+    </div>
+    <div id="commissions" style="display: none;">
+        <textarea>commissions</textarea>
+    </div>
+</body>
+</html>
+

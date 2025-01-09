@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+}
+#imgbackground {
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+}
+#headerimg {
+    height: 50%;
+    width: 26%;
+}
+#navbartoplevel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: .5%;
+    
+    
+}
+#navbartoplevel div {
+    width: 10%;
+    padding-inline: 8%;
+}
+.navbutton {
+
+    width: 100%;
+}
