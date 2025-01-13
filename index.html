@@ -2,7 +2,7 @@
 <html lang="en-US">
     <script>
         let currselect = 'aboutme';
-  
+        const enc = "aGlpNDcxNzAyQGdtYWlsLmNvbQ==";
 
         const gallery = document.getElementById('gallery');
 
@@ -22,6 +22,9 @@
             }
             let newhtml = document.getElementById(currselect);
             newhtml.style.display = "block";
+
+            const form = document.getElementById("contactform");
+            form.setAttribute("action", "mailto:".concat(atob(enc)).concat("?subject=Commission Request"));
         }
 
     </script>
@@ -76,19 +79,10 @@
                 </div>
             </div>
             <div id="commissions" style="display: none;">
-                <h2>Send e-mail to someone@example.com:</h2>
                 <div id="commissionform">
-                    <form action="mailto:someone@example.com" method="post" enctype="text/plain">
-                        Name:
-                        <br>
-                        <input type="text" name="name">
-                        <br> E-mail:
-                        <br>
-                        <input type="text" name="mail">
-                        <br> Comment:
-                        <br>
-                        <input type="text" name="comment" size="50">
-                        <br>
+                    <form id="contactform" action="" method="post" enctype="application/x-www-form-urlencoded">
+                        <br> Description of Idea:
+                        <textarea name="body"></textarea><br />
                         <br>
                         <input type="submit" value="Send">
                         <input type="reset" value="Reset">
