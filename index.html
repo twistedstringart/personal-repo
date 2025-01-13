@@ -2,9 +2,6 @@
 <html lang="en-US">
     <script>
         let currselect = 'aboutme';
-        const enc = "aGlpNDcxNzAyQGdtYWlsLmNvbQ==";
-
-        const gallery = document.getElementById('gallery');
 
         function buttonPressed(text) {
             let currhtml = document.getElementById(currselect);
@@ -22,10 +19,16 @@
             }
             let newhtml = document.getElementById(currselect);
             newhtml.style.display = "block";
-
-            const form = document.getElementById("contactform");
-            form.setAttribute("action", "mailto:".concat(atob(enc)).concat("?subject=Commission Request"));
         }
+
+        function sendCommmission() {
+            let commissionbody = document.getElementById("emailbody").value;
+            const form = document.getElementById("contactform");
+            const enc = "aGlpNDcxNzAyQGdtYWlsLmNvbQ==";
+            form.setAttribute("action", "mailto:".concat(atob(enc)).concat("?subject=Commission Request").concat("&body=").concat(commissionbody));
+        }
+
+        
 
     </script>
 <head>
@@ -80,9 +83,9 @@
             </div>
             <div id="commissions" style="display: none;">
                 <div id="commissionform">
-                    <form id="contactform" action="" method="post" enctype="application/x-www-form-urlencoded">
+                    <form id="contactform" onsubmit="sendCommmission()" method="post" enctype="application/x-www-form-urlencoded">
                         <br> Description of Idea:
-                        <textarea name="body"></textarea><br />
+                        <textarea id="emailbody"></textarea><br />
                         <br>
                         <input type="submit" value="Send">
                         <input type="reset" value="Reset">
