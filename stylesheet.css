@@ -96,7 +96,7 @@ body {
     padding-left: 30%;
     padding-top:10%;
 }
-#commissionform {
+#commissionformouter {
     width: 50%;
     background-color: white;
     border-radius: 2em;
@@ -113,6 +113,13 @@ body {
     outline-offset: .7em;
     border-radius: .2em;
     padding: 2%;
+}
+#submitbutton {
+    padding-top: 10%;
+}
+#namefield {
+    padding-inline: 48%;
+    padding-right: 7%;
 }
 .newbutton {
     background-color: black;

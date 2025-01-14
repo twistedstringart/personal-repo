@@ -23,9 +23,13 @@
 
         function sendCommmission() {
             let commissionbody = document.getElementById("emailbody").value;
-            const form = document.getElementById("contactform");
+            const form = document.getElementById("commissionform");
             const enc = "aGlpNDcxNzAyQGdtYWlsLmNvbQ==";
-            form.setAttribute("action", "mailto:".concat(atob(enc)).concat("?subject=Commission Request").concat("&body=").concat(commissionbody));
+            const name = document.getElementById("namefield").value;
+            form.setAttribute("action", "mailto:".concat(atob(enc))
+            .concat("?subject=Commission Request").concat("&body=")
+            .concat("Name: ").concat(name).concat("%0D%0A").concat("%0D%0A")
+            .concat("Description of Idea: ").concat(commissionbody));
         }
 
         
@@ -82,13 +86,19 @@
                 </div>
             </div>
             <div id="commissions" style="display: none;">
-                <div id="commissionform">
-                    <form id="contactform" onsubmit="sendCommmission()" method="post" enctype="application/x-www-form-urlencoded">
-                        <br> Description of Idea:
-                        <textarea id="emailbody"></textarea><br />
-                        <br>
-                        <input type="submit" value="Send">
-                        <input type="reset" value="Reset">
+                <div id="commissionformouter">
+                    <h1>Contact</h1>
+                    <form id="commissionform" onsubmit="sendCommmission()" method="post" enctype="application/x-www-form-urlencoded">
+                        <div id="commissionformcontent">
+                            <p>Name:</p>
+                            <textarea id="namefield"></textarea>
+                            <p>Description of Idea:</p> 
+                            <textarea style="padding-right: 55%; padding-bottom: 30%;" id="emailbody"></textarea>             
+                        </div>
+                        <div id="submitbutton" >
+                            <input class="newbutton" type="submit" value="Email Me!">
+                        </div>
+                        
                     </form>
                 </div>
             </div>
